@@ -4,6 +4,8 @@ import React from 'react';
 import * as Select from '@radix-ui/react-select';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { Check, ChevronDown } from 'lucide-react';
+import {useRouter} from "next/navigation";
+
 
 interface FormData {
     name: string;
@@ -23,6 +25,8 @@ interface BookingFormProps {
     handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
 }
 
+
+
 export default function BookingForm({
                                         formData,
                                         setFormData,
@@ -30,6 +34,18 @@ export default function BookingForm({
                                         handleSubmit,
                                         handleInputChange,
                                     }: BookingFormProps) {
+
+    const router = useRouter();
+
+    const onSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        await handleSubmit(e);
+        router.push('/success');
+    };
+
+
+
+
     return (
         <section id="booking" className="py-16 md:py-24 bg-zinc-900 text-white">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -39,7 +55,7 @@ export default function BookingForm({
                     <p className="text-[#82b84a] mt-4 text-base sm:text-lg">Мы перезвоним в течение 15 минут для подтверждения</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="bg-zinc-800 border border-[#82b84a] rounded-3xl p-6 sm:p-8 md:p-12 space-y-7 md:space-y-8">
+                <form onSubmit={onSubmit} className="bg-zinc-800 border border-[#82b84a] rounded-3xl p-6 sm:p-8 md:p-12 space-y-7 md:space-y-8">
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                         <div>
@@ -51,7 +67,7 @@ export default function BookingForm({
                                 onChange={handleInputChange}
                                 required
                                 className="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-[#82b84a] transition-colors"
-                                placeholder="Иван Иванов"
+                                placeholder="Введите ваше имя"
                             />
                         </div>
                         <div>

@@ -11,14 +11,14 @@ export default function Footer() {
                     <div>
                         <div className="text-white font-medium mb-6 text-lg">Контакты</div>
                         <div className="space-y-4 text-sm">
-                            <a href="tel:+74951234567" className="flex items-center gap-3 hover:text-[#82b84a] transition-colors">
+                            <p  className="flex items-center gap-3 hover:text-[#82b84a] transition-colors">
                                 <Phone className="w-5 h-5 text-[#941dc5] flex-shrink-0" />
                                 +7 (495) 123-45-67
-                            </a>
-                            <a href="mailto:info@automaster.ru" className="flex items-center gap-3 hover:text-[#82b84a] transition-colors">
+                            </p>
+                            <p  className="flex items-center gap-3 hover:text-[#82b84a] transition-colors">
                                 <Mail className="w-5 h-5 text-[#941dc5] flex-shrink-0" />
                                 info@automaster.ru
-                            </a>
+                            </p>
                             <div className="flex items-center gap-3">
                                 <MapPin className="w-5 h-5 text-[#82b84a] flex-shrink-0" />
                                 Москва, ул. Автомобильная, 15

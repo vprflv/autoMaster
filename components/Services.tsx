@@ -1,43 +1,13 @@
 'use client';
 
 import React from 'react';
+import {services} from "@/config/services";
 
 export default function Services() {
-    const services = [
-        {
-            title: "Диагностика",
-            desc: "Компьютерная и визуальная диагностика всех систем",
-            image: "/services/diagnostics.jpg"
-        },
-        {
-            title: "Техническое обслуживание",
-            desc: "ТО-1, ТО-2, замена масла, фильтров, тормозов",
-            image: "/services/maintenance.jpg"
-        },
-        {
-            title: "Ремонт двигателя",
-            desc: "Капитальный ремонт, ГРМ, турбины, охлаждение",
-            image: "/services/engine.jpg"
-        },
-        {
-            title: "Ходовая часть",
-            desc: "Подвеска, рулевое управление, ступицы, ШРУСы",
-            image: "/services/suspension.jpg"
-        },
-        {
-            title: "Электроника",
-            desc: "ЭБУ, датчики, аккумуляторы, генераторы",
-            image: "/services/electronics.jpg"
-        },
-        {
-            title: "Кузовной ремонт",
-            desc: "Покраска, рихтовка, полировка, антикоррозия",
-            image: "/services/body.jpg"
-        },
-    ];
+
 
     return (
-        <section id="services" className="py-16 md:py-20 bg-zinc-700">
+        <section id="services" className="py-16 md:py-20 bg-zinc-900">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-12 md:mb-16">
                     <div className="uppercase tracking-widest text-xs text-white mb-3">НАШИ УСЛУГИ</div>
@@ -51,14 +21,14 @@ export default function Services() {
                         <div
                             key={i}
                             className="group relative overflow-hidden cursor-pointer rounded-3xl aspect-[4/3] bg-zinc-800
-                                       hover:scale-[1.03] transition-all duration-500"
+                                        transition-all duration-500"
                         >
                             {/* Фото */}
                             <img
                                 src={service.image}
                                 alt={service.title}
                                 className="absolute inset-0 w-full h-full object-cover transition-all duration-500
-                                           group-hover:scale-110"
+                                           "
                             />
 
                             {/* Градиент затемнения */}

@@ -8,50 +8,20 @@ import Advantages from '@/components/Advantages';
 import BookingForm from '@/components/BookingForm';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import { useBookingForm } from '@/hooks/useBookingForm';
 
 export default function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        carModel: '',
-        service: '',
-        message: '',
-        callback: true,
-        agreedToPolicy: false,
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
     const [showScrollTop, setShowScrollTop] = useState(false);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value, type } = e.target;
-        const checked = (e.target as HTMLInputElement).checked;
+    const {
+        formData,
+        setFormData,
+        isSubmitting,
+        handleInputChange,
+        handleSubmit,
+    } = useBookingForm();
 
-        setFormData(prev => ({
-            ...prev,
-            [name]: type === 'checkbox' ? checked : value
-        }));
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        await new Promise(resolve => setTimeout(resolve, 1500));
-
-        alert('✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
-
-        setFormData({
-            name: '',
-            phone: '',
-            carModel: '',
-            service: '',
-            message: '',
-            callback: true,
-            agreedToPolicy: false,
-        });
-        setIsSubmitting(false);
-    };
 
     useEffect(() => {
         const handleScroll = () => {

@@ -23,7 +23,7 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                             setIsMenuOpen(false);
                         }}
-                        className="block w-20 h-20 sm:w-24 sm:h-24 relative group"
+                        className="block w-20 h-20 sm:w-24 sm:h-24 relative group scale-150"
                     >
                         <Image
                             src="/logo.png"
@@ -39,7 +39,7 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 </div>
 
                 {/* Десктопное меню */}
-                <div className="hidden md:flex items-center gap-10 text-sm font-medium absolute left-1/2 -translate-x-1/2">
+                <div className="hidden md:flex items-center gap-10 text-md font-medium absolute left-1/2 -translate-x-1/2">
                     <a
                         href="#services"
                         className="group relative px-4 py-2 text-sm font-medium transition-all duration-200 hover:text-[#82b84a]"
@@ -64,15 +64,15 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 </div>
 
                 {/* Контакты (десктоп) */}
-                <div className="hidden md:flex flex-col items-start gap-3 text-sm flex-shrink-0">
+                <div className="hidden md:flex flex-col items-start gap-3 text-md flex-shrink-0">
 
-                    <a
-                        href="tel:+74951234567"
+                    <p
+
                         className="flex items-center gap-3 hover:text-white transition-colors font-medium"
                     >
                         <Phone className="w-4 h-4 text-[#941dc5] flex-shrink-0" />
                         <span className="text-[#82b84a]">+7 (495) 123-45-67</span>
-                    </a>
+                    </p>
 
                     <div className="flex items-center gap-3 text-white text-xs">
                         <MapPin className="w-4 h-4 text-[#941dc5] flex-shrink-0" />
