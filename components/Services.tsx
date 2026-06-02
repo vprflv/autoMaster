@@ -44,7 +44,7 @@ export default function Services() {
                                 </p>
                             </div>
 
-                            {/* Неоновая рамка при наведении */}
+
                             <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#82b84a]
                                           transition-all duration-300 rounded-3xl" />
                         </div>

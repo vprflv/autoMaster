@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Dancing_Script } from 'next/font/google';
+
 import "./globals.css";
 import { Toaster } from 'sonner';
 
-const dancingScript = Dancing_Script({
-    weight: ['400', '500', '600', '700'],
-    subsets: ['latin'],
-    variable: '--font-dancing',
-    display: 'swap',
-});
+
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -24,6 +19,33 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     title: "АвтоМастер",
     description: "Автосервис в Москве",
+
+    icons: {
+        icon: [
+            'icons/icon-512.png',
+            'icons/icon-192.png',
+            'icons/icon-32.png',
+            'icons/icon-16.png',
+        ],
+        apple: 'icons/apple-touch-icon.png',
+        shortcut: 'icons/icon-16.png',
+    },
+
+    openGraph: {
+        title: 'Автосервис в Москве',
+        description: 'Гарантия качества, лучшие цены ',
+        images: [
+            {
+                url: 'icons/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'АвтоМастер — Автосервис',
+            },
+        ],
+        type: 'website',
+        locale: 'ru_RU',
+    },
+
 };
 
 export default function RootLayout({
@@ -32,7 +54,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ru" className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable}`}>
+        <html lang="ru" className={`${geistSans.variable} ${geistMono.variable}`}>
         <body className="min-h-full flex flex-col antialiased">
         {children}
 
